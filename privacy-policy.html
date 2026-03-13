@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — WiFi World</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
+
+    :root {
+      --c1: #00e5ff;
+      --c2: #7c4dff;
+      --c3: #00ff88;
+      --bg: #060d1a;
+      --card: rgba(255, 255, 255, 0.05);
+      --border: rgba(255, 255, 255, 0.1);
+      --text: rgba(255, 255, 255, 0.88);
+      --muted: rgba(255, 255, 255, 0.5);
+      --warm: #ffd166;
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.7;
+    }
+
+    .bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse 60% 50% at 10% 20%, rgba(0, 229, 255, .08) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 60% at 90% 80%, rgba(124, 77, 255, .07) 0%, transparent 60%),
+        linear-gradient(160deg, #060d1a, #080f20, #050b15);
+    }
+
+    .wrap {
+      position: relative;
+      z-index: 1;
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 40px 20px 80px
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0 40px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none
+    }
+
+    .logo-ico {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--c1), var(--c2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      box-shadow: 0 0 18px rgba(0, 229, 255, .35);
+    }
+
+    .logo-txt {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 18px;
+      background: linear-gradient(90deg, var(--c1), var(--c2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .back-btn {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, .04);
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all .2s;
+    }
+
+    .back-btn:hover {
+      border-color: rgba(0, 229, 255, .3);
+      color: var(--c1);
+    }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 0 0 48px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 16px;
+      border-radius: 100px;
+      background: rgba(0, 229, 255, .08);
+      border: 1px solid rgba(0, 229, 255, .2);
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--c1);
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--c3);
+      animation: blink 1.8s ease-in-out infinite
+    }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1
+      }
+
+      50% {
+        opacity: .2
+      }
+    }
+
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: clamp(28px, 5vw, 44px);
+      line-height: 1.15;
+      margin-bottom: 14px;
+      background: linear-gradient(135deg, #fff 30%, rgba(255, 255, 255, .6));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: 15px;
+      color: var(--muted);
+      max-width: 500px;
+      margin: 0 auto 24px
+    }
+
+    .updated {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--muted);
+      background: rgba(255, 255, 255, .04);
+      border: 1px solid var(--border);
+      padding: 5px 14px;
+      border-radius: 100px;
+    }
+
+    /* TOC */
+    .toc {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px 26px;
+      margin-bottom: 36px;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .toc-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+      color: var(--muted);
+      margin-bottom: 14px
+    }
+
+    .toc ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px
+    }
+
+    .toc a {
+      color: var(--muted);
+      font-size: 13px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      transition: color .18s;
+    }
+
+    .toc a:hover {
+      color: var(--c1)
+    }
+
+    .toc a::before {
+      content: '→';
+      font-size: 11px;
+      opacity: .5
+    }
+
+    @media(max-width:520px) {
+      .toc ul {
+        grid-template-columns: 1fr
+      }
+    }
+
+    /* SECTIONS */
+    .section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px 30px;
+      margin-bottom: 16px;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      transition: border-color .2s;
+      scroll-margin-top: 20px;
+    }
+
+    .section:hover {
+      border-color: rgba(255, 255, 255, .16)
+    }
+
+    .sec-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 16px
+    }
+
+    .sec-ico {
+      width: 40px;
+      height: 40px;
+      border-radius: 11px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 19px;
+      flex-shrink: 0;
+    }
+
+    .sec-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 1.2
+    }
+
+    .sec-sub {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px
+    }
+
+    p {
+      font-size: 14px;
+      color: rgba(255, 255, 255, .78);
+      margin-bottom: 12px
+    }
+
+    p:last-child {
+      margin-bottom: 0
+    }
+
+    ul.list {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0
+    }
+
+    ul.list li {
+      font-size: 14px;
+      color: rgba(255, 255, 255, .75);
+      padding: 7px 0 7px 22px;
+      position: relative;
+      border-bottom: 1px solid rgba(255, 255, 255, .05);
+    }
+
+    ul.list li:last-child {
+      border-bottom: none
+    }
+
+    ul.list li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--c1);
+      font-weight: 700;
+    }
+
+    .highlight {
+      background: rgba(0, 229, 255, .06);
+      border: 1px solid rgba(0, 229, 255, .15);
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin: 14px 0;
+      font-size: 13px;
+      color: rgba(255, 255, 255, .8);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .highlight .hi {
+      font-size: 16px;
+      flex-shrink: 0;
+      margin-top: 1px
+    }
+
+    .highlight.green {
+      background: rgba(0, 255, 136, .06);
+      border-color: rgba(0, 255, 136, .15)
+    }
+
+    .highlight.warn {
+      background: rgba(255, 209, 102, .06);
+      border-color: rgba(255, 209, 102, .15)
+    }
+
+    strong {
+      color: #fff;
+      font-weight: 600
+    }
+
+    a.mail {
+      color: var(--c1);
+      text-decoration: none;
+      font-weight: 500
+    }
+
+    a.mail:hover {
+      text-decoration: underline
+    }
+
+    /* CONTACT CARD */
+    .contact-card {
+      background: linear-gradient(135deg, rgba(0, 229, 255, .08), rgba(124, 77, 255, .08));
+      border: 1px solid rgba(0, 229, 255, .2);
+      border-radius: 18px;
+      padding: 28px 30px;
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .contact-card h3 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 20px;
+      margin-bottom: 8px
+    }
+
+    .contact-card p {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 18px
+    }
+
+    .contact-card a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 24px;
+      border-radius: 100px;
+      background: linear-gradient(135deg, var(--c1), var(--c2));
+      color: #050a14;
+      font-weight: 700;
+      font-size: 13px;
+      text-decoration: none;
+      transition: opacity .2s;
+    }
+
+    .contact-card a:hover {
+      opacity: .85
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 40px 0 0;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    footer span {
+      color: var(--c1)
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg"></div>
+  <div class="wrap">
+
+    <!-- NAV -->
+    <nav>
+      <a href="index.html" class="logo">
+        <div class="logo-ico">📡</div>
+        <div class="logo-txt">WiFi World</div>
+      </a>
+      <a href="index.html" class="back-btn">← Back to Map</a>
+    </nav>
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="badge">
+        <div class="badge-dot"></div>Legal Document
+      </div>
+      <h1>Privacy Policy</h1>
+      <p class="hero-sub">We believe privacy is a right. This policy explains exactly what data WiFi World collects —
+        and what it does not.</p>
+      <div class="updated">🗓️ Last updated: June 2026</div>
+    </div>
+
+    <!-- TOC -->
+    <div class="toc">
+      <div class="toc-title">Table of Contents</div>
+      <ul>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#data">Data We Collect</a></li>
+        <li><a href="#no-data">What We Don't Collect</a></li>
+        <li><a href="#location">Location Data</a></li>
+        <li><a href="#third-party">Third-Party Services</a></li>
+        <li><a href="#children">Children's Privacy</a></li>
+        <li><a href="#security">Security</a></li>
+        <li><a href="#changes">Policy Changes</a></li>
+        <li><a href="#rights">Your Rights</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- 1. OVERVIEW -->
+    <div class="section" id="overview">
+      <div class="sec-header">
+        <div class="sec-ico" style="background:rgba(0,229,255,.1);border:1px solid rgba(0,229,255,.2)">🛡️</div>
+        <div>
+          <div class="sec-title">Overview</div>
+          <div class="sec-sub">The short version</div>
+        </div>
+      </div>
+      <p>WiFi World ("we", "our", or "the app") is a free application that displays publicly available free WiFi hotspot
+        locations on a world map. We are committed to protecting your privacy.</p>
+      <div class="highlight green">
+        <span class="hi">✅</span>
+        <span><strong>Simple summary:</strong> WiFi World does not collect, store, sell, or share any personal
+          information. The app works entirely in your browser using public map data.</span>
+      </div>
+      <p>This Privacy Policy applies to the WiFi World web application accessible at our GitHub Pages URL and describes
+        our practices regarding information collection and use.</p>
+    </div>
+
+    <!-- 2. DATA WE COLLECT -->
+    <div class="section" id="data">
+      <div class="sec-header">
+        <div class="sec-ico" style="background:rgba(124,77,255,.1);border:1px solid rgba(124,77,255,.2)">📊</div>
+        <div>
+          <div class="sec-title">Data We Collect</div>
+          <div class="sec-sub">Minimal and transparent</div>
+        </div>
+      </div>
+      <p>WiFi World is a client-side only application. We do not operate any backend servers or databases. The following
+        describes what may be collected:</p>
+      <ul class="list">
+        <li><strong>Device location (optional):</strong> Only when you explicitly tap the "My Location" button. This
+          data is used solely to center the map and is never stored or transmitted to our servers.</li>
+        <li><strong>Map tile requests:</strong> Your IP address may be visible to CartoDB/CARTO (our map tile provider)
+          as part of normal tile loading. We do not control or access this data.</li>
+        <li><strong>Overpass API requests:</strong> Queries to OpenStreetMap's Overpass API include your approximate map
+          viewport. No personal identifiers are sent.</li>
+      </ul>
+      <div class="highlight">
+        <span class="hi">ℹ️</span>
+        <span>All data processing happens locally in your browser. No user data is ever sent to WiFi World's own
+          servers, because WiFi World has no servers.</span>
+      </div>
+    </div>
+
+    <!-- 3. WHAT WE DON'T COLLECT -->
+    <div class="section" id="no-data">
+      <div class="sec-header">
+        <div class="sec-ico" style="background:rgba(0,255,136,.1);border:1px solid rgba(0,255,136,.2)">🚫</div>
+        <div>
+          <div class="sec-title">What We Do Not Collect</div>
+          <div class="sec-sub">Zero personal data</div>
+        </div>
+      </div>
+      <p>WiFi World explicitly does <strong>not</strong> collect any of the following:</p>
+      <ul class="list">
+        <li>Name, email address, or any account information</li>
+        <li>Phone number or device identifiers (IMEI, advertising ID)</li>
+        <li>Browsing history or search queries</li>
+        <li>Contacts, calendar, photos, or microphone data</li>
+        <li>Financial information or payment data</li>
+        <li>Persistent location history or movement tracking</li>
+        <li>Cookies for tracking or advertising purposes</li>
+        <li>Analytics or behavioral profiling data</li>
+        <li>Social media profile data</li>
+      </ul>
+      <div class="highlight green">
+        <span class="hi">✅</span>
+        <span>We do not use any advertising networks, analytics SDKs, or tracking pixels. There are no ads in WiFi
+          World.</span>
+      </div>
+    </div>
+
+    <!-- 4. LOCATION -->
+    <div class="section" id="location">
+      <div class="sec-header">
+        <div class="sec-ico" style="background:rgba(255,107,157,.1);border:1px solid rgba(255,107,157,.2)">📍</div>
+        <div>
+          <div class="sec-title">Location Data</div>
+          <div class="sec-sub">Optional, never stored</div>
+        </div>
+      </div>
+      <p>WiFi World may request access to your device's location through the browser's Geolocation API. This is
+        <strong>entirely optional</strong> and only triggered when you press the location button.
+      </p>
+      <ul class="list">
+        <li><strong>Purpose:</strong> To center the map on your current position for convenience.</li>
+        <li><strong>Storage:</strong> Your coordinates are never stored, logged, or transmitted beyond your device.</li>
+        <li><strong>Control:</strong> You can deny location permission at any time in your browser settings. The app
+          remains fully functional without location access.</li>
+        <li><strong>Persistence:</strong> No location data persists between sessions.</li>
+      </ul>
+      <div class="highlight warn">
+        <span class="hi">⚠️</span>
+        <span>WiFi World never requests background location access or tracks your movements over time.</span>
+      </div>
+    </div>
+
+    <!-- 5. THIRD-PARTY -->
+    <div class="section" id="third-party">
+      <div class="sec-header">
+        <div class="sec-ico" style="background:rgba(255,209,102,.1);border:1px solid rgba(255,209,102,.2)">🔗</div>
+        <div>
+          <div class="sec-title">Third-Party Services</div>
+          <div class="sec-sub">External services we rely on</div>
+        </div>
+      </div>
+      <p>WiFi World uses the following third-party services to function. Each has its own privacy policy which we
+        encourage you to review:</p>
+      <ul class="list">
+        <li>
+          <strong>OpenStreetMap / Overpass API</strong> — Provides free WiFi hotspot data from the OpenStreetMap
+          database. Data is public and community-maintained.
+          <br><a href="https://wiki.openstreetmap.org/wiki/Privacy_Policy" target="_blank"
+            class="mail">openstreetmap.org/privacy</a>
+        </li>
+        <li>
+          <strong>CARTO (CartoDB)</strong> — Provides map tile imagery. Your IP address may be included in tile
+          requests.
+          <br><a href="https://carto.com/privacy" target="_blank" class="mail">carto.com/privacy</a>
+        </li>
+        <li>
+          <strong>Nominatim (OpenStreetMap)</strong> — Used for reverse geocoding (showing area name). No personal data
+          is sent.
+          <br><a href="https://operations.osmfoundation.org/policies/nominatim/" target="_blank"
+            class="mail">osmfoundation.org/nominatim-policy</a>
+        </li>
+        <li>
+          <strong>Google Fonts</strong> — Loads typography. May log your IP for font delivery.
+          <br><a href="https://policies.google.com/privacy" target="_blank" class="mail">policies.google.com/privacy</a>
+        </li>
+        <li>
+          <strong>GitHub Pages</strong> — Hosts this application. GitHub may collect standard web server logs.
+          <br><a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank"
+            class="mail">github.com/privacy</a>
+        </li>
+        <li>
+          <strong>Leaflet.js (unpkg CDN)</strong> — JavaScript mapping library. Loaded from unpkg CDN.
+          <br><a href="https://www.npmjs.com/policies/privacy" target="_blank" class="mail">npmjs.com/privacy</a>
+        </li>
+      </ul>
+      <p>We do not share any user data with these services beyond what is technically necessary for the app to function.
+      </p>
+    </div>
+
+    <!-- 6. CHILDREN -->
+    <div class="section" id="children">
+      <div class="sec-header">
+        <div class="sec-ico" style="background:rgba(0,255,136,.1);border:1px solid rgba(0,255,136,.2)">👶</div>
+        <div>
+          <div class="sec-title">Children's Privacy</div>
+          <div class="sec-sub">COPPA compliant</div>
+        </div>
+      </div>
+      <p>WiFi World does not knowingly collect any personal information from children under the age of 13 (or 16 in the
+        European Union). Since we collect no personal data from any user, there is no special risk to children.</p>
+      <p>The application does not contain content directed at children and does not require account creation or any form
+        of registration.</p>
+      <div class="highlight green">
+        <span class="hi">✅</span>
+        <span>WiFi World is safe for all ages. No registration, no accounts, no personal data collected from
+          anyone.</span>
+      </div>
+    </div>
+
+    <!-- 7. SECURITY -->
+    <div class="section" id="security">
+      <div class="sec-header">
+        <div class="sec-ico" style="background:rgba(0,229,255,.1);border:1px solid rgba(0,229,255,.2)">🔒</div>
+        <div>
+          <div class="sec-title">Security</div>
+          <div class="sec-sub">How we protect your information</div>
+        </div>
+      </div>
+      <p>Since WiFi World does not collect or store personal data, the primary security concern is protecting the
+        integrity of the application itself.</p>
+      <ul class="list">
+        <li>The application is served over <strong>HTTPS</strong> via GitHub Pages.</li>
+        <li>All external API requests are made to reputable, trusted services via HTTPS.</li>
+        <li>No sensitive data is stored in browser localStorage or cookies.</li>
+        <li>The application is open source and auditable.</li>
+      </ul>
+      <p>While we take security seriously, please note that no method of transmission over the Internet is 100% secure.
+        We encourage you to use secure networks when accessing any web application.</p>
+    </div>
+
+    <!-- 8. CHANGES -->
+    <div class="section" id="changes">
+      <div class="sec-header">
+        <div class="sec-ico" style="background:rgba(124,77,255,.1);border:1px solid rgba(124,77,255,.2)">📝</div>
+        <div>
+          <div class="sec-title">Changes to This Policy</div>
+          <div class="sec-sub">How we handle updates</div>
+        </div>
+      </div>
+      <p>We may update this Privacy Policy from time to time. When we do, we will update the "Last updated" date at the
+        top of this page.</p>
+      <p>We encourage you to review this Privacy Policy periodically to stay informed about how we are protecting your
+        information. Your continued use of the application after any changes constitutes acceptance of the updated
+        policy.</p>
+      <div class="highlight">
+        <span class="hi">ℹ️</span>
+        <span>Material changes will be communicated via the app's GitHub repository. We will never change this policy in
+          a way that compromises your privacy without clear notice.</span>
+      </div>
+    </div>
+
+    <!-- 9. YOUR RIGHTS -->
+    <div class="section" id="rights">
+      <div class="sec-header">
+        <div class="sec-ico" style="background:rgba(0,255,136,.1);border:1px solid rgba(0,255,136,.2)">⚖️</div>
+        <div>
+          <div class="sec-title">Your Rights</div>
+          <div class="sec-sub">GDPR, CCPA and more</div>
+        </div>
+      </div>
+      <p>Depending on your location, you may have specific rights regarding your personal data under laws such as the
+        GDPR (EU), CCPA (California), or other regional regulations.</p>
+      <p>Since WiFi World does not collect, store, or process any personal data, the following rights are automatically
+        fulfilled:</p>
+      <ul class="list">
+        <li><strong>Right to access:</strong> There is no personal data to access.</li>
+        <li><strong>Right to deletion:</strong> There is no personal data to delete.</li>
+        <li><strong>Right to portability:</strong> There is no personal data to export.</li>
+        <li><strong>Right to object:</strong> No profiling or automated decision-making occurs.</li>
+        <li><strong>Right to opt out of sale:</strong> We do not sell data, as we have no data to sell.</li>
+      </ul>
+      <div class="highlight green">
+        <span class="hi">✅</span>
+        <span>WiFi World is fully compliant with GDPR and CCPA by design — because zero data is zero data.</span>
+      </div>
+    </div>
+
+    <!-- 10. CONTACT -->
+    <div id="contact" class="contact-card">
+      <h3>Questions or Concerns?</h3>
+      <p>If you have any questions about this Privacy Policy or our data practices, we're happy to help. Reach out to us
+        via our GitHub repository.</p>
+      <a href="https://github.com/econev/WiFi-World" target="_blank">
+        <span>⭐</span> Open an Issue on GitHub
+      </a>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>© 2026 <span>WiFi World</span> — All rights reserved</p>
+      <p style="margin-top:6px">Hosted on <span>GitHub Pages</span> · Open Source · Free Forever</p>
+    </footer>
+
+  </div>
+</body>
+
+</html>
