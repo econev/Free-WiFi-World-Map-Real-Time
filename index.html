@@ -17,10 +17,7 @@
 }
 html,body{width:100%;height:100%;overflow:hidden;font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text)}
 .bg{position:fixed;inset:0;z-index:0;
-  background:
-    radial-gradient(ellipse 70% 60% at 15% 25%,rgba(0,229,255,.1) 0%,transparent 65%),
-    radial-gradient(ellipse 60% 70% at 85% 75%,rgba(124,77,255,.09) 0%,transparent 65%),
-    linear-gradient(135deg,#050a14,#080f20,#040810);
+  background:var(--bg);
 }
 /* LOADER */
 #loader{position:fixed;inset:0;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;background:rgba(5,10,20,.95);transition:opacity .5s}
@@ -28,16 +25,16 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'DM Sans',sans-seri
 .ring{width:60px;height:60px;border-radius:50%;border:3px solid rgba(255,255,255,.08);border-top-color:var(--c1);animation:spin .9s linear infinite;position:relative}
 .ring::after{content:'';position:absolute;inset:7px;border-radius:50%;border:2px solid rgba(255,255,255,.05);border-bottom-color:var(--c2);animation:spin 1.3s linear infinite reverse}
 @keyframes spin{to{transform:rotate(360deg)}}
-.lt{font-family:'Syne',sans-serif;font-weight:800;font-size:20px;background:linear-gradient(90deg,var(--c1),var(--c2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.lt{font-family:'Syne',sans-serif;font-weight:800;font-size:20px;color:var(--c1)}
 .ls{font-size:13px;color:var(--muted)}
 /* LAYOUT */
 #app{position:fixed;inset:0;z-index:1;display:flex;flex-direction:column}
 /* HEADER */
 header{height:var(--hh);flex-shrink:0;display:flex;align-items:center;padding:0 14px;gap:10px;background:rgba(5,10,20,.75);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);z-index:500}
 .logo{display:flex;align-items:center;gap:9px}
-.logo-ico{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--c1),var(--c2));display:flex;align-items:center;justify-content:center;font-size:16px;box-shadow:0 0 16px rgba(0,229,255,.4);animation:glow 3s ease-in-out infinite alternate;flex-shrink:0}
+.logo-ico{width:34px;height:34px;border-radius:9px;background:var(--c1);display:flex;align-items:center;justify-content:center;font-size:16px;box-shadow:0 0 16px rgba(0,229,255,.4);animation:glow 3s ease-in-out infinite alternate;flex-shrink:0}
 @keyframes glow{from{box-shadow:0 0 14px rgba(0,229,255,.35)}to{box-shadow:0 0 28px rgba(0,229,255,.65),0 0 50px rgba(124,77,255,.25)}}
-.logo-txt{font-family:'Syne',sans-serif;font-weight:800;font-size:17px;background:linear-gradient(90deg,var(--c1),var(--c2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;white-space:nowrap}
+.logo-txt{font-family:'Syne',sans-serif;font-weight:800;font-size:17px;color:var(--c1);white-space:nowrap}
 .hstats{display:flex;gap:7px;margin-left:auto;align-items:center}
 .chip{display:flex;align-items:center;gap:5px;padding:5px 10px;border-radius:100px;font-size:12px;font-weight:500;white-space:nowrap}
 .chip.live{background:rgba(0,255,136,.1);border:1px solid rgba(0,255,136,.28);color:var(--c3)}
@@ -62,7 +59,7 @@ header{height:var(--hh);flex-shrink:0;display:flex;align-items:center;padding:0 
 .frow{display:flex;gap:5px;flex-wrap:wrap}
 .fc{padding:5px 11px;border-radius:100px;font-size:12px;font-weight:500;cursor:pointer;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--muted);transition:all .2s;white-space:nowrap;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
 .fc.on{color:#050a14;border-color:transparent;font-weight:600}
-.fc.on.all{background:linear-gradient(135deg,var(--c1),var(--c2))}
+.fc.on.all{background:var(--c1);color:#050a14}
 .fc.on.cafe{background:var(--warm)}
 .fc.on.lib{background:var(--c3)}
 .fc.on.hotel{background:var(--c2);color:#fff}
@@ -116,7 +113,7 @@ header{height:var(--hh);flex-shrink:0;display:flex;align-items:center;padding:0 
 .prow{display:flex;align-items:flex-start;gap:7px;margin-bottom:5px;font-size:12px;color:var(--muted)}
 .prow span:last-child{color:var(--text)}
 .pbadge{display:inline-flex;align-items:center;gap:4px;background:rgba(0,255,136,.1);border:1px solid rgba(0,255,136,.22);color:var(--c3);border-radius:100px;padding:3px 10px;font-size:11px;font-weight:600;margin-top:7px}
-.pbtn{display:block;width:100%;text-align:center;margin-top:9px;padding:9px;border-radius:9px;background:linear-gradient(135deg,var(--c1),var(--c2));color:#050a14;font-weight:700;font-size:12px;text-decoration:none;transition:opacity .2s}
+.pbtn{display:block;width:100%;text-align:center;margin-top:9px;padding:9px;border-radius:9px;background:var(--c1);color:#050a14;font-weight:700;font-size:12px;text-decoration:none;transition:opacity .2s}
 .pbtn:hover{opacity:.82}
 /* FABS */
 .fabs{position:absolute;right:11px;bottom:75px;z-index:200;display:flex;flex-direction:column;gap:7px;align-items:flex-end}
@@ -180,7 +177,6 @@ header{height:var(--hh);flex-shrink:0;display:flex;align-items:center;padding:0 
 <div id="app">
   <header>
     <div class="logo">
-      <div class="logo-ico">📡</div>
       <div class="logo-txt">WiFi World</div>
     </div>
     <div class="hstats">
@@ -526,20 +522,25 @@ async function fetchOSM(bounds){
     }
   ];
 
-  for(var i=0;i<strategies.length;i++){
-    var s=strategies[i];
-    $('stxt').textContent='Trying: '+s.name+'...';
-    try{
-      var data=await s.fn();
-      if(data&&Array.isArray(data.elements)){
-        console.log('OK via '+s.name+': '+data.elements.length+' pts');
-        return data;
-      }
-    }catch(e){
-      console.warn(s.name+' failed: '+e.message);
+  $('stxt').textContent='Scanning area...';
+  return new Promise(function(resolve) {
+    var pending = strategies.length;
+    var resolved = false;
+    for (var i = 0; i < strategies.length; i++) {
+      strategies[i].fn().then(function(data) {
+        if (!resolved && data && Array.isArray(data.elements)) {
+          resolved = true;
+          resolve(data);
+        } else {
+          pending--;
+          if (pending === 0 && !resolved) resolve(null);
+        }
+      }).catch(function(e) {
+        pending--;
+        if (pending === 0 && !resolved) resolve(null);
+      });
     }
-  }
-  return null;
+  });
 }
 
 // ── PROCESS ──
